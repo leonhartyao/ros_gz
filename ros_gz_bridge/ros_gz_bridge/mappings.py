@@ -21,7 +21,7 @@ Mapping = namedtuple('Mapping', ('ros_type', 'gz_type'))
 # The pattern for adding a new mapping
 #
 #   'ros2_package_name': [
-#       Mapping('ros2_message_name', 'ignition_message_name'),
+#       Mapping('ros2_message_name', 'gazebo_message_name'),
 #   ],
 MAPPINGS = {
     'builtin_interfaces': [

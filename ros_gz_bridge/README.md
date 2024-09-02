@@ -307,7 +307,7 @@ Let's test our topic with namespace:
 ```bash
 # Shell A:
 . ~/bridge_ws/install/setup.bash
-ros2 run ros_gz_bridge parameter_bridge chatter@std_msgs/msg/String@ignition.msgs.StringMsg \
+ros2 run ros_gz_bridge parameter_bridge chatter@std_msgs/msg/String@gz.msgs.StringMsg \
   --ros-args -p expand_gz_topic_names:=true -r __ns:=/demo
 ```
 
