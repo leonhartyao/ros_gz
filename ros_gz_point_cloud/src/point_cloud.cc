@@ -33,13 +33,13 @@
 #include <sensor_msgs/fill_image.h>
 #include <sensor_msgs/point_cloud2_iterator.h>
 
-IGNITION_ADD_PLUGIN(
-  ros_gz_point_cloud::PointCloud,
-  gz::sim::System,
-  ros_gz_point_cloud::PointCloud::ISystemConfigure,
-  ros_gz_point_cloud::PointCloud::ISystemPostUpdate)
+gz_ADD_PLUGIN(
+    ros_gz_point_cloud::PointCloud,
+    gz::sim::System,
+    ros_gz_point_cloud::PointCloud::ISystemConfigure,
+    ros_gz_point_cloud::PointCloud::ISystemPostUpdate)
 
-using namespace ros_gz_point_cloud;
+    using namespace ros_gz_point_cloud;
 
 /// \brief Types of sensors supported by this plugin
 enum class SensorType
@@ -203,7 +203,7 @@ void PointCloud::Configure(
   if (!ros::isInitialized()) {
     int argc = 0;
     char ** argv = NULL;
-    ros::init(argc, argv, "ignition", ros::init_options::NoSigintHandler);
+    ros::init(argc, argv, "gazebo", ros::init_options::NoSigintHandler);
     ROS_INFO_NAMED("ros_gz_point_cloud", "Initialized ROS");
   }
 
